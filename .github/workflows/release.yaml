@@ -1,0 +1,34 @@
+name: Publish release
+
+on:
+  push:
+    tags: ['v[0-9]*']
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build executable scripts
+        run: |
+          make main validate inspect
+
+      - name: Create GitHub release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+        # Call the hub tool to create the release.
+        # Documentation: https://hub.github.com/hub.1.html
+        run: |
+          hub release create \
+            -m ${GITHUB_REF_NAME}" \
+            -t "${GITHUB_SHA}" \
+            -a dbwebb2 \
+            -a dbwebb2-validate \
+            -a dbwebb2-inspect \
+            "${GITHUB_REF_NAME}"
