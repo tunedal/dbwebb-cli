@@ -11,7 +11,7 @@
 #
 # Basic settings
 #
-TARGET="https://raw.githubusercontent.com/mosbth/dbwebb-cli/master/dbwebb2"
+TARGET="https://github.com/mosbth/dbwebb-cli/releases/latest/download/dbwebb2"
 PATH1="/usr/local/bin"
 PATH2="/usr/bin"
 WHERE="$PATH1/dbwebb"
