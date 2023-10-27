@@ -728,7 +728,7 @@ selfupdate()
     local target="$DBW_EXECUTABLE_PATH"
     local remote=
     local silent="--quiet"
-    local repo="https://raw.githubusercontent.com/mosbth/dbwebb-cli/$version"
+    local repo="https://github.com/mosbth/dbwebb-cli/releases/download/$version"
 
     if [[ $VERY_VERBOSE ]]; then
         silent=""
