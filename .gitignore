@@ -1,2 +1,7 @@
 __pycache__
 .dbwebb.config
+
+# Generated files.
+/dbwebb2
+/dbwebb2-validate
+/dbwebb2-inspect
